@@ -17,12 +17,9 @@ def supers_list(request):
         
         super_type_name = request.query_params.get('super_type')
         print(super_type_name)
-        
         query_set = Supers.objects.all()
-        
         if super_type_name:
             query_set = query_set.filter(super_type__type=super_type_name)
-            
         serializer = SupersSerializer(query_set, many = True)
         return Response(serializer.data)
     
