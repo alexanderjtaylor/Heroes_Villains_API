@@ -119,3 +119,5 @@ try:
     from heroes_villains_project.local_settings import *
 except ImportError:
     pass
+
+APPEND_SLASH=False
